@@ -11,4 +11,4 @@ tile.html: Infos, sollen irgendwie schön angezeigt werden (button zum joinen ei
 
 index.css: schriftart, hintergrundfarbe....<br />
 
-index.js: ...<br />
+index.js: ..Hallo.<br />
