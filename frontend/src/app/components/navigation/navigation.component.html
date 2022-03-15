@@ -27,12 +27,11 @@
     >
       <span>Logout</span>
     </a>
-    <a
-      *ngIf="!isAuthenticated"
-      routerLinkActive="active-link"
-      routerLink="/signup"
+
+    <a *ngIf="!isAuthenticated"
+      ><button mat-flat-button (click)="onSignUp()" mat-dialog-close>
+        Signup
+      </button></a
     >
-      <span>Signup</span>
-    </a>
   </span>
 </mat-toolbar>
