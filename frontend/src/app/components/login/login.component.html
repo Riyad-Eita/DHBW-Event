@@ -1,17 +1,44 @@
 <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+  <p>
+    <mat-toolbar class="toolbar" color="primary">
+      <span>Anmelden</span>
+      <span class="example-spacer"></span>
+      <span>
+        <button mat-icon-button mat-dialog-close>
+          <mat-icon>close</mat-icon>
+        </button></span
+      >
+    </mat-toolbar>
+  </p>
+
+  <div>
+    <span>Neuer Nutzer? </span>
+    <a
+      ><button mat-flat-button (click)="onSignUp()" mat-dialog-close>
+        Account erstellen
+      </button></a
+    >
+  </div>
+
   <mat-form-field>
     <mat-label>Email</mat-label>
-    <input matInput placeholder="Ex. Jon" formControlName="email" />
+    <input matInput placeholder="Mr. Oli" formControlName="email" />
   </mat-form-field>
   <mat-form-field>
     <mat-label>Password</mat-label>
     <input
       matInput
       type="password"
-      placeholder="Ex. Jon"
+      placeholder="Mr.Oli2002"
       formControlName="password"
     />
   </mat-form-field>
+  <div>
+    <button class="test" mat-flat-button mat-dialog-close>
+      Password vergessen?
+    </button>
+  </div>
+
   <button
     color="accent"
     [disabled]="!loginForm.valid"

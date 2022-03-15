@@ -12,13 +12,13 @@
     >
       <span>Posts</span>
     </a>
+
     <a
-      *ngIf="!isAuthenticated"
-      routerLinkActive="active-link"
-      routerLink="/login"
+      ><button mat-flat-button (click)="onLogIn()" mat-dialog-close>
+        Login
+      </button></a
     >
-      <span>Login</span>
-    </a>
+
     <a
       *ngIf="isAuthenticated"
       (click)="logout()"
