@@ -1,8 +1,14 @@
-mat-form-field {
-  width: 100%;
+.example-spacer {
+  flex: 1 1 auto;
 }
 
-button {
+.toolbar {
+  background-color: #e3001b;
+}
+
+.button {
+  background-color: #e3001b;
+  margin-top: 20px;
   float: right;
   width: 200px;
 }

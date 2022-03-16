@@ -11,7 +11,7 @@
     </mat-toolbar>
   </p>
 
-  <div>
+  <div class="text">
     <span>Neuer Nutzer? </span>
     <a
       ><button mat-flat-button (click)="onSignUp()" mat-dialog-close>
@@ -19,30 +19,28 @@
       </button></a
     >
   </div>
-
-  <mat-form-field>
-    <mat-label>Email</mat-label>
-    <input matInput placeholder="Mr. Oli" formControlName="email" />
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Password</mat-label>
-    <input
-      matInput
-      type="password"
-      placeholder="Mr.Oli2002"
-      formControlName="password"
-    />
-  </mat-form-field>
-  <div>
-    <button class="test" mat-flat-button mat-dialog-close>
-      Password vergessen?
-    </button>
+  <div class="form-group">
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Mr. Oli" formControlName="email" />
+    </mat-form-field>
   </div>
-
+  <div class="form-group">
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        type="password"
+        placeholder="Mr.Oli2002"
+        formControlName="password"
+      />
+    </mat-form-field>
+  </div>
   <button
-    color="accent"
+    class="button"
     [disabled]="!loginForm.valid"
     mat-raised-button
+    color="primary"
     type="submit"
   >
     <span>Log in</span>

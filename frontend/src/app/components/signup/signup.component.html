@@ -37,10 +37,10 @@
     </mat-form-field>
   </div>
   <button
-    color="accent"
     [disabled]="!signupForm.valid"
     mat-raised-button
     type="submit"
+    (click)="onLogIn()"
   >
     <span>Sign up</span>
   </button>

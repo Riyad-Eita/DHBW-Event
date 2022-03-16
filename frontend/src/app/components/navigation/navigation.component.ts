@@ -19,7 +19,7 @@ export class NavigationComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
-    public dialogRef: MatDialogRef<LoginComponent>,
+    public dialogRef: MatDialogRef<NavigationComponent>,
     private dialog: MatDialog
   ) {}
 
@@ -35,7 +35,7 @@ export class NavigationComponent implements OnInit {
     this.router.navigate(["login"]);
   }
   reloadPage(): void {
-    window.location.href = "/main-page";
+    window.location.href = "/posts";
   }
   onClose() {
     this.dialogRef.close();

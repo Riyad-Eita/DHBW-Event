@@ -1,4 +1,4 @@
-<mat-toolbar color="accent">
+<mat-toolbar appearance="legacy">
   <span>
     <a routerLink="/">
       <span>Event</span>
@@ -13,7 +13,7 @@
       <span>Posts</span>
     </a>
 
-    <a
+    <a *ngIf="!isAuthenticated"
       ><button mat-flat-button (click)="onLogIn()" mat-dialog-close>
         Login
       </button></a

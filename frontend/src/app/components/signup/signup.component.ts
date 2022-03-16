@@ -1,8 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-
+import { LoginComponent } from "../login/login.component";
 import { AuthService } from "src/app/services/auth.service";
+import { MatDialogRef } from "@angular/material/dialog";
+import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 
 @Component({
   selector: "app-signup",
@@ -12,7 +14,12 @@ import { AuthService } from "src/app/services/auth.service";
 export class SignupComponent implements OnInit {
   signupForm: FormGroup;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    public dialogRef: MatDialogRef<SignupComponent>,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.signupForm = this.createFormGroup();
@@ -28,11 +35,17 @@ export class SignupComponent implements OnInit {
       ]),
     });
   }
-
+  onLogIn() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "525px";
+    dialogConfig.height = "600px";
+    this.dialog.open(LoginComponent, dialogConfig);
+  }
   signup(): void {
     this.authService.signup(this.signupForm.value).subscribe((msg) => {
       console.log(msg);
-      this.router.navigate(["login"]);
     });
   }
 }
