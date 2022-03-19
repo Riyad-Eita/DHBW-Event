@@ -1,6 +1,12 @@
 <mat-toolbar appearance="legacy">
   <span>
     <a routerLink="/">
+      <span>
+        <img src="frontend\src\assets\icons8-bottle-64.png" />
+
+        ></span
+      >
+
       <span>Event</span>
     </a>
   </span>
@@ -23,7 +29,7 @@
       *ngIf="isAuthenticated"
       (click)="logout()"
       routerLinkActive="active-link"
-      routerLink="/login"
+      routerLink="/home"
     >
       <span>Logout</span>
     </a>

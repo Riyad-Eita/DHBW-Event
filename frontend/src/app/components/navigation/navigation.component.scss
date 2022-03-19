@@ -2,7 +2,6 @@ mat-toolbar {
   display: flex;
   justify-content: space-between;
   padding: 0 64px;
-  color: rgb(0, 0, 0);
   a {
     text-decoration: none;
     &.active-link {
@@ -12,4 +11,8 @@ mat-toolbar {
       margin-left: 24px;
     }
   }
+}
+
+.example-spacer {
+  flex: 1 1 auto;
 }

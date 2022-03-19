@@ -32,7 +32,6 @@ export class NavigationComponent implements OnInit {
   logout(): void {
     localStorage.removeItem("token");
     this.authService.isUserLoggedIn$.next(false);
-    this.router.navigate(["login"]);
   }
   reloadPage(): void {
     window.location.href = "/posts";
