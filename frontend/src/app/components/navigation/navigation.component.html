@@ -1,15 +1,8 @@
-<mat-toolbar appearance="legacy">
-  <span>
-    <a routerLink="/">
-      <span>
-        <img src="frontend\src\assets\icons8-bottle-64.png" />
+<mat-toolbar class="toolbar" color="primary">
+  <div class="flexbox-item flexbox-item-logo">
+    <a><img src="../assets\DHBW.png" alt="Atos logo" /></a>
+  </div>
 
-        ></span
-      >
-
-      <span>Event</span>
-    </a>
-  </span>
   <span>
     <a
       *ngIf="isAuthenticated"
