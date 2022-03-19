@@ -19,12 +19,15 @@
     >
 
     <a
+      class="logout"
       *ngIf="isAuthenticated"
       (click)="logout()"
       routerLinkActive="active-link"
       routerLink="/home"
     >
-      <span>Logout</span>
+      <span>
+        <mat-icon>exit_to_app</mat-icon>
+      </span>
     </a>
 
     <a *ngIf="!isAuthenticated"
