@@ -7,7 +7,7 @@ import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 
 import { SignupComponent } from "../signup/signup.component";
 import { LoginComponent } from "../login/login.component";
-
+import { CreatePostComponent } from "../create-post/create-post.component";
 @Component({
   selector: "app-navigation",
   templateUrl: "./navigation.component.html",
@@ -54,5 +54,13 @@ export class NavigationComponent implements OnInit {
     dialogConfig.width = "525px";
     dialogConfig.height = "600px";
     this.dialog.open(LoginComponent, dialogConfig);
+  }
+  onCreate() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "525px";
+    dialogConfig.height = "600px";
+    this.dialog.open(CreatePostComponent, dialogConfig);
   }
 }
