@@ -1,26 +1,46 @@
 <form [formGroup]="signupForm" (ngSubmit)="signup()" novalidate>
-  <mat-form-field>
-    <mat-label>First name</mat-label>
-    <input matInput placeholder="Ex. Jon" formControlName="name" />
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Email</mat-label>
-    <input matInput placeholder="Ex. Jon" formControlName="email" />
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Password</mat-label>
-    <input
-      matInput
-      type="password"
-      placeholder="Ex. Jon"
-      formControlName="password"
-    />
-  </mat-form-field>
+  <mat-toolbar class="toolbar" color="primary">
+    <span>Account erstellen</span>
+    <span class="example-spacer"></span>
+    <span>
+      <button mat-icon-button mat-dialog-close>
+        <mat-icon>close</mat-icon>
+      </button></span
+    >
+  </mat-toolbar>
+  <span>
+    <br />
+  </span>
+  <div class="name">
+    <mat-form-field appearance="legacy">
+      <mat-label>First name</mat-label>
+      <input matInput placeholder="Mr. Oli" formControlName="name" />
+    </mat-form-field>
+  </div>
+  <div class="email">
+    <p>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Mr. Oli" formControlName="email" />
+      </mat-form-field>
+    </p>
+  </div>
+  <div class="password">
+    <mat-form-field appearance="legacy">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        type="password"
+        placeholder="Oli2002"
+        formControlName="password"
+      />
+    </mat-form-field>
+  </div>
   <button
-    color="accent"
     [disabled]="!signupForm.valid"
     mat-raised-button
     type="submit"
+    (click)="onLogIn()"
   >
     <span>Sign up</span>
   </button>

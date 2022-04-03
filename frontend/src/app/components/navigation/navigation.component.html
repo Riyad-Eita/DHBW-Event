@@ -1,9 +1,8 @@
-<mat-toolbar color="accent">
-  <span>
-    <a routerLink="/">
-      <span>Event</span>
-    </a>
-  </span>
+<mat-toolbar class="toolbar" color="primary">
+  <div class="flexbox-item flexbox-item-logo">
+    <a><img src="../assets\DHBW.png" alt="Atos logo" /></a>
+  </div>
+
   <span>
     <a
       *ngIf="isAuthenticated"
@@ -12,27 +11,37 @@
     >
       <span>Posts</span>
     </a>
-    <a
-      *ngIf="!isAuthenticated"
-      routerLinkActive="active-link"
-      routerLink="/login"
+
+    <a *ngIf="!isAuthenticated"
+      ><button mat-flat-button (click)="onLogIn()">Login</button></a
     >
-      <span>Login</span>
+    <a *ngIf="isAuthenticated">
+      <button class="menu" mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
     </a>
-    <a
-      *ngIf="isAuthenticated"
-      (click)="logout()"
-      routerLinkActive="active-link"
-      routerLink="/login"
+    <mat-menu #menu="matMenu">
+      <a href="/home">
+        <button
+          mat-menu-item
+          class="logout"
+          *ngIf="isAuthenticated"
+          (click)="logout()"
+        >
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Logout</span>
+        </button>
+      </a>
+      <button mat-menu-item (click)="onCreate()">
+        <mat-icon>add</mat-icon>
+        <span>Create Post</span>
+      </button>
+    </mat-menu>
+
+    <a *ngIf="!isAuthenticated"
+      ><button mat-flat-button (click)="onSignUp()" mat-dialog-close>
+        Signup
+      </button></a
     >
-      <span>Logout</span>
-    </a>
-    <a
-      *ngIf="!isAuthenticated"
-      routerLinkActive="active-link"
-      routerLink="/signup"
-    >
-      <span>Signup</span>
-    </a>
   </span>
 </mat-toolbar>

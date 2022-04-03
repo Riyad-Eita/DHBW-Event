@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
       .subscribe();
   }
   reloadPage(): void {
-    window.location.href = "/main-page";
+    window.location.href = "/posts";
   }
   onClose() {
     this.dialogRef.close();

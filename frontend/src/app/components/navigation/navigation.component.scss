@@ -2,6 +2,7 @@ mat-toolbar {
   display: flex;
   justify-content: space-between;
   padding: 0 64px;
+  background-color: #e3001b;
   a {
     text-decoration: none;
     &.active-link {
@@ -11,4 +12,28 @@ mat-toolbar {
       margin-left: 24px;
     }
   }
+}
+.toolbar {
+  background-color: hsl(0, 0%, 100%);
+}
+
+.logout {
+  color: rgb(7, 6, 6);
+}
+
+.menu {
+  color: rgb(7, 6, 6);
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+.flexbox-item-logo {
+  margin-left: 1vw;
+  height: 25px;
+  flex-shrink: 0;
+}
+
+.flexbox-item-logo img {
+  height: 25px;
 }
