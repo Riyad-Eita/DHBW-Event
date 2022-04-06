@@ -1,9 +1,9 @@
-const { validationResult } = require('express-validator');
+const { validationResult } = require("express-validator");
 
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
-const User = require('../models/user');
+const User = require("../models/user");
 
 exports.signup = async (req, res, next) => {
   const errors = validationResult(req);
@@ -25,7 +25,7 @@ exports.signup = async (req, res, next) => {
 
     const result = await User.save(userDetails);
 
-    res.status(201).json({ message: 'User registered!' });
+    res.status(201).json({ message: "User registered!" });
   } catch (err) {
     if (!err.statusCode) {
       err.statusCode = 500;
@@ -41,7 +41,7 @@ exports.login = async (req, res, next) => {
     const user = await User.find(email);
 
     if (user[0].length !== 1) {
-      const error = new Error('A user with this email could not be found.');
+      const error = new Error("A user with this email could not be found.");
       error.statusCode = 401;
       throw error;
     }
@@ -51,7 +51,7 @@ exports.login = async (req, res, next) => {
     const isEqual = await bcrypt.compare(password, storedUser.password);
 
     if (!isEqual) {
-      const error = new Error('Wrong password!');
+      const error = new Error("Wrong password!");
       error.statusCode = 401;
       throw error;
     }
@@ -61,8 +61,8 @@ exports.login = async (req, res, next) => {
         email: storedUser.email,
         userId: storedUser.id,
       },
-      'secretfortoken',
-      { expiresIn: '1h' }
+      "secretfortoken",
+      { expiresIn: "1h" }
     );
     res.status(200).json({ token: token, userId: storedUser.id });
   } catch (err) {

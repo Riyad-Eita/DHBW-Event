@@ -27,6 +27,8 @@ import {
   MAT_DIALOG_DATA,
 } from "@angular/material/dialog";
 import { AuthInterceptorService } from "./services/auth-interceptor.service";
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatNativeDateModule } from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { AuthInterceptorService } from "./services/auth-interceptor.service";
     HttpClientModule,
     MatDialogModule,
     MatMenuModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [
     {
@@ -66,6 +70,10 @@ import { AuthInterceptorService } from "./services/auth-interceptor.service";
     },
     {
       provide: MatDialogRef,
+      useValue: [],
+    },
+    {
+      provide: MatDatepickerModule,
       useValue: [],
     },
   ],
